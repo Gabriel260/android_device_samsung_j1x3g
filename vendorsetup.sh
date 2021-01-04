@@ -1,1 +1,1 @@
-add_lunch_combo full_j120h-userdebug
+add_lunch_combo omni_j1x3g-userdebug

@@ -1,9 +1,8 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-LOCAL_PATH := device/samsung/j120h
+LOCAL_PATH := device/samsung/j1x3g
 
-LOCAL_PATH := device/samsung/j120h
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
 else
@@ -20,8 +19,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_j120h
-PRODUCT_DEVICE := j120h
+PRODUCT_NAME := omni_j1x3g
+PRODUCT_DEVICE := j1x3g
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-j120h
+PRODUCT_MODEL := SM-J120H
