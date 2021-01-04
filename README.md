@@ -1,13 +1,23 @@
 # TWRP Device Tree for Samsung Galaxy J1 (J120H)
 
 I used:
+Ubuntu 18.04
 
-Ubuntu 14.04
-
-openjdk-7-jdk
 
 ------
 
-used repo: repo init -u git://github.com/omnirom/android.git -b android-5.1
+How to setup:
 
-TWRP resource: https://github.com/omnirom/android_bootable_recovery   ---- branch android 6.0 !!!
+git clone https://github.com/akhilnarang/scripts
+sudo bash scripts/setup/install_android_sdk.sh
+sudo bash scripts/setup/android_build_env.sh
+
+mkdir twrp
+cd twrp
+
+repo init --depth=1 -u git://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+repo sync
+
+
+How to compile:
+
