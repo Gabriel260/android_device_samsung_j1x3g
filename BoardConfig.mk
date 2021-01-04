@@ -61,7 +61,7 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # TWRP specific build flags
-#TW_THEME := portrait_mdpi
+TW_THEME := portrait_mdpi
 DEVICE_RESOLUTION := 480x800
 RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_REAL_SDCARD := true
@@ -76,3 +76,8 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_EXCLUDE_SUPERSU := true
 #TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
+BOARD_HAS_NO_MISC_PARTITION := true
+TW_MTP_DEVICE := /dev/mtp_usb
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/20200000.usb/gadget/lun%d/file"
+TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
+
