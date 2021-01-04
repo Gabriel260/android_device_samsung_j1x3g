@@ -9,12 +9,7 @@ else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel \
-    $(LOCAL_PATH)/init.recovery.board.rc:root/init.recovery.board.rc \
-    $(LOCAL_PATH)/init.recovery.universal.rc:root/init.recovery.universal.rc \
-    $(LOCAL_PATH)/twrp.fstab:recovery/root/etc/recovery.fstab
-
+PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/j1x3g/recovery/root,recovery/root)
 
 $(call inherit-product, build/target/product/full.mk)
 
