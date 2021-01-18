@@ -32,4 +32,4 @@ on property:sys.usb.config=adb
     write /sys/class/android_usb/android0/idProduct 685E
     write /sys/class/android_usb/android0/functions ${sys.usb.config}
     write /sys/class/android_usb/android0/enable ${service.adb.root}
-    start adbd 
+    start adbd
