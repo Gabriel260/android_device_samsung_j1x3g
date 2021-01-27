@@ -1,3 +1,17 @@
+# Copyright (C) 2014 The CyanogenMod Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # Platform
 TARGET_ARCH := arm
 TARGET_BOARD_PLATFORM := sc8830
@@ -16,26 +30,31 @@ BOARD_VENDOR := samsung
 TARGET_NO_BOOTLOADER := true
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x360000000
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x360000000
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 5872025600
+BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_SUPPRESS_SECURE_ERASE := true
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_BASE := 0x00000000
+BOARD_KERNEL_CMDLINE := console=ttyS1,115200n8
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j1x3g/dt.img
 TARGET_PREBUILT_KERNEL := device/samsung/j1x3g/kernel
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --dt device/samsung/j1x3g/dt.img
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TW_BRIGHTNESS_PATH := /sys/class/backlight/panel/brightness
 TARGET_RECOVERY_FSTAB := device/samsung/j1x3g/twrp.fstab
-TARGET_RECOVERY_INITRC := device/samsung/j1x3g/init.rc
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_THEME := portrait_mdpi

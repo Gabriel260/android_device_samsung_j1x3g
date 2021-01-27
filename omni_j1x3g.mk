@@ -1,21 +1,17 @@
+## Specify phone tech before including full_phone	
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+# Release name
+PRODUCT_RELEASE_NAME := grandprimeve3g
 
-LOCAL_PATH := device/samsung/j1x3g
+# Inherit some common Omni stuff.
+$(call inherit-product, vendor/omni/config/common.mk)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
 
-PRODUCT_COPY_FILES += $(call find-copy-subdir-files,*,device/samsung/j1x3g/recovery/root,recovery/root)
-
-$(call inherit-product, build/target/product/full.mk)
-
-# Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := omni_j1x3g
-PRODUCT_DEVICE := j1x3g
+## Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := grandprimeve3g
+PRODUCT_NAME := omni_grandprimeve3g
 PRODUCT_BRAND := samsung
+PRODUCT_MODEL := SM-G531H
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-J120H
+PRODUCT_CHARACTERISTICS := phone
